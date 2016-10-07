@@ -1,46 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-	<meta charset="UTF-8">
-	<title>Calculatrice Simplon</title>
+	<link rel="stylesheet" href="style.css">
+	<title>jQuery</title>
 </head>
 <body>
 	<h1>Bienvenue</h1>
-	<div>
-	</div>
-	<div class="container">
-		Résultat = <span>?</span>
+	<form onsubmit="return false">
+		<input id="input1" type="text" placeholder="Nombre 1">
+		<input id="input2" type="text" placeholder="Nombre 2">
+		<select name="ope" id="ope">
+			<option value="add">+</option>
+			<option value="substract">-</option>
+			<option value="multiply">*</option>
+			<option value="divide">/</option>
+		</select>
+		<button id="button1">Calculer</button>
+	</form>
 
-		<div class="row">
-			<button id="chiffre">1</button>
-			<button id="chiffre">2</button>
-			<button id="chiffre">3</button>
-			<button id="ope">+</button>
-		</div>
-
-		<div class="row">
-			<button id="chiffre">4</button>
-			<button id="chiffre">5</button>
-			<button id="chiffre">6</button>
-			<button id="ope">-</button>
-		</div>
-
-		<div class="row">
-			<button id="chiffre">7</button>
-			<button id="chiffre">8</button>
-			<button id="chiffre">9</button>
-			<button id="ope">*</button>
-		</div>
-
-		<div class="row">
-			<button id="chiffre">0</button>
-			<button id="ope">/</button>
-			<button id="result">=</button>
-		</div>
-	</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-<script src="app.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="app.js"></script>
 </body>
 </html>
