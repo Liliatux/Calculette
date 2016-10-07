@@ -1,52 +1,68 @@
-(function(){
+$(document).ready(main);
 
-	var resultat;
-	var chiffre = parseInt($("#chiffre").text(), 10);
+function main(){
+
+	var chiffre = {
+		0: $("#0").html(),
+		1: $("#1").html(),
+		2: $("#2").html(),
+		3: $("#3").html(),
+		4: $("#4").html(),
+		5: $("#5").html(),
+		6: $("#6").html(),
+		7: $("#7").html(),
+		8: $("#8").html(),
+		9: $("#9").html()
+	};
 	console.log(chiffre);
-	var ope = $("#ope").text();
+	var ope = {
+		addition: $("#add").html(),
+		substract: $("#sub").html(),
+		multiply: $("#mult").html(),
+		divide: $("#div").html()
+		};
 	console.log(ope);
 
 	function clickBoutton(){
-		$("boutton").html();
-		return chiffre;
-		return ope;
-	}
+		var boutton = $(this).text();
+		var spanOpe = $("#ope").text();
+		var operation = spanOpe + boutton;
+		$("#ope").text(operation);
 		
-	function add(chiffre){
-		chiffre + chiffre;
-	}
-
-	function sub(chiffre){
-		chiffre - chiffre;
-	}
-
-	function mult(chiffre){
-		chiffre * chiffre;
-	}
-
-	function div(chiffre){
-		chiffre / chiffre;
-	}
-
-	function clicknombre(){
-		nombre1
-	}
-
-	function operation(){
-		if(ope === "add"){
-			resultat = add();
-		} else if(ope === "sub"){
-			resultat = sub();
-		} else if(ope === "mult"){
-			resultat = mult();
-		} else if(ope === "divide"){
-			resultat = div();
-		} else{
-			alert("What ?");
+		function add(a, b){
+			a + b;
 		}
+
+		function sub(a, b){
+			a - b;
+		}
+
+		function mult(a, b){
+			a * b;
+		}
+
+		function div(a, b){
+			a / b;
+		}
+
+		function result(){
+			$("input").val();
+
+			if(boutton === ope["addition"]){
+				add(chiffre, chiffre);
+			} else if(boutton === ope["substract"]){
+				sub();
+			} else if(boutton === ope["multiply"]){
+				mult();
+			} else if(boutton === ope["divide"]){
+				div();
+			} else{
+				alert("What ?");
+			}
+		}
+
+		$("#result").click(result);
 	}
 
 	$("button").click(clickBoutton);
-	$("#result").click(operation);
-	$("span").html(resultat);
-});
+}
