@@ -1,47 +1,52 @@
-var ope = {
-	addition = " ",
-	soustraction = " ",
-	multiplication = " ",
-	division = " "
-};
+(function(){
 
-var a = $(".calculette").data("chiffre");
+	var resultat;
+	var chiffre = parseInt($("#chiffre").text(), 10);
+	console.log(chiffre);
+	var ope = $("#ope").text();
+	console.log(ope);
 
-var b = $(".calculette").data("chiffre");
-
-$("button").click(function(a, ope, b) {
-	$("#aff").text(a + ope + b);
-});
-
-function add(a, b) {
-	return a + b;
-}
-
-function substract(a, b) {
-	return a - b;
-}
-
-function multiply(a, b) {
-	return a * b;
-}
-
-function divide(a, b) {
-	return a / b;
-}
-
-function calc() {
-	if(ope === 'add') {
-		console.log(add(a, b));
-	} else if(ope === 'substract') { 
-		console.log(substract(a, b));
-	} else if(ope === 'multiply') {
-		console.log(multiply(a, b));
-	} else {
-		console.log(divide(a, b));
+	function clickBoutton(){
+		$("boutton").html();
+		return chiffre;
+		return ope;
+	}
+		
+	function add(chiffre){
+		chiffre + chiffre;
 	}
 
-}
+	function sub(chiffre){
+		chiffre - chiffre;
+	}
 
-function click() {
-	
-}
+	function mult(chiffre){
+		chiffre * chiffre;
+	}
+
+	function div(chiffre){
+		chiffre / chiffre;
+	}
+
+	function clicknombre(){
+		nombre1
+	}
+
+	function operation(){
+		if(ope === "add"){
+			resultat = add();
+		} else if(ope === "sub"){
+			resultat = sub();
+		} else if(ope === "mult"){
+			resultat = mult();
+		} else if(ope === "divide"){
+			resultat = div();
+		} else{
+			alert("What ?");
+		}
+	}
+
+	$("button").click(clickBoutton);
+	$("#result").click(operation);
+	$("span").html(resultat);
+});
