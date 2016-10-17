@@ -41,7 +41,3 @@ function calc() {
 	}
 
 }
-
-function click() {
-	
-}
