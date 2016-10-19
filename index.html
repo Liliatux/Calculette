@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="exos/jquery/calculette/node_modules/semantic-ui/dist/semantic.css">
+	<link rel="stylesheet" href="node_modules/semantic-ui/dist/semantic.css">
 	<link rel="stylesheet" href="style.css">
 	<title>Calculatrice Simplon</title>
 </head>
@@ -14,35 +14,35 @@
 		<div><input></div>
 
 		<div class="row">
-			<button class=chiffre value="1">1</button>
-			<button class=chiffre value="2">2</button>
-			<button class=chiffre value="3">3</button>
-			<button id="add" value="+">+</button>
+			<button data-chiffre="1">1</button>
+			<button data-chiffre="2">2</button>
+			<button data-chiffre="3">3</button>
+			<button data-ope="+">+</button>
 		</div>
 
 		<div class="row">
-			<button class=chiffre value="4">4</button>
-			<button class=chiffre value="5">5</button>
-			<button class=chiffre value="6">6</button>
-			<button id="sub" value="-">-</button>
+			<button data-chiffre="4">4</button>
+			<button data-chiffre="5">5</button>
+			<button data-chiffre="6">6</button>
+			<button data-ope="-">-</button>
 		</div>
 
 		<div class="row">
-			<button id="7" value="7">7</button>
-			<button id="8" value="8">8</button>
-			<button id="9" value="9">9</button>
-			<button id="mult" value="*">*</button>
+			<button data-chiffre="7">7</button>
+			<button data-chiffre="8">8</button>
+			<button data-chiffre="9">9</button>
+			<button data-ope="*">*</button>
 		</div>
 
 		<div class="row">
-			<button id="0" value="0">0</button>
-			<button id="div" value="/">/</button>
-			<button id="result" value="=">=</button>
+			<button data-chiffre="0">0</button>
+			<button data-ope="/">/</button>
+			<button id="result">=</button>
 			<button id="reset">Reset</button>
 		</div>
 	</div>
 
-	<script src="exos/jquery/calculette/node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>

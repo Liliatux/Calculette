@@ -3,42 +3,47 @@
 	var app = {
 		nombre1: null,
 		nombre2: null,
+		addition: null,
+		substract: null,
+		multiply: null,
+		divide: null,
 		
 		init: function(){
-
+			this.listeners();
 		},
 
 		listeners: function(){
-			$("button").on("click");
-			$("#result").on("click");
-			$("#reset").on("click");
+			$("button").on("click", this.calc.bind(this));
+			$("#result").on("click", this.result.bind(this));
+			$("#reset").on("click", this.reset.bind(this));
 		},
 
 		chiffre: function(){
-
+			this.nombre1 = $("button").data("chiffre");
+			this.nombre2 = $("button").data("chiffre");
 		},
 
 		ope: function(){
-			addition: $("#add").val();
-			substract: $("#sub").val();
-			multiply: $("#mult").val();
-			divide: $("#div").val();
+			this.addition = $("button").data("ope");
+			this.substract = $("button").data("ope");
+			this.multiply = $("button").data("ope");
+			this.divide = $("button").data("ope");
 		},
 
-		add: function(a, b){
-			return a + b;
+		add: function(){
+			return nombre1 + nombre2;
 		},
 
-		sub: function(a, b){
-			return a - b;
+		sub: function(){
+			return nombre1 - nombre2;
 		},
 
-		mult: function(a, b){
-			return a * b;
+		mult: function(){
+			return nombre1 * nombre2;
 		},
 
-		div: function(a, b){
-			return a / b;
+		div: function(){
+			return nombre1 / nombre2;
 		},
 
 		calc: function(a, ope, b){
