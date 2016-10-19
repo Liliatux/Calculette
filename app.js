@@ -1,67 +1,79 @@
 (function(){
 	'use strict';
 	var app = {
-		nombre1: null,
-		nombre2: null,
-		addition: null,
-		substract: null,
-		multiply: null,
-		divide: null,
-		
+		number:null,
+		numb1: null,
+		numb2: null,
+		add: null,
+		sub: null,
+		mult: null,
+		div: null,
+
 		init: function(){
 			this.listeners();
 		},
 
 		listeners: function(){
-			$("button").on("click", this.calc.bind(this));
-			$("#result").on("click", this.result.bind(this));
-			$("#reset").on("click", this.reset.bind(this));
+			$("button").on("click",this.start.bind(this));
+			$("#result").on("click",this.calc.bind(this));
+			$("#reset").on("click",this.reset.bind(this));
 		},
 
 		chiffre: function(){
-			this.nombre1 = $("button").data("chiffre");
-			this.nombre2 = $("button").data("chiffre");
+			this.numb1 = parseInt($("button").data("calc"), 10);
+			this.numb2 = parseInt($("button").data("calc"), 10);
+			console.log(numb1);
 		},
 
 		ope: function(){
-			this.addition = $("button").data("ope");
-			this.substract = $("button").data("ope");
-			this.multiply = $("button").data("ope");
-			this.divide = $("button").data("ope");
+			this.add = $("button").data("calc");
+			this.sub = $("button").data("calc");
+			this.mult = $("button").data("calc");
+			this.div = $("button").data("calc");
 		},
 
 		add: function(){
-			return nombre1 + nombre2;
+			return this.numb1 + this.numb2;
 		},
 
 		sub: function(){
-			return nombre1 - nombre2;
+			return this.numb1 - this.numb2;
 		},
 
 		mult: function(){
-			return nombre1 * nombre2;
+			return this.numb1 * this.numb2;
 		},
 
 		div: function(){
-			return nombre1 / nombre2;
+			return this.numb1 / this.numb2;
 		},
 
-		calc: function(a, ope, b){
-			$("input").val(a + ope + b);
-			if(ope === ope["addition"]){
-				input(add(a, b));
-			} else if(ope === ope["substract"]){
-				input(sub(a, b));
-			} else if(ope === ope["multiply"]){
-				input(mult(a, b));
-			} else if(ope === ope["divide"]){
-				input(div(a, b));
+		input: function(){
+			$("input").val(this.number);
+		},
+
+		start: function(){
+			this.input();
+		},
+
+		calc: function(){
+			this.input();
+			if(this.ope() === this.add){
+				input(this.add());
+			} else if(this.ope === this.sub){
+				input(this.sub());
+			} else if(this.ope === this.mult){
+				input(this.mult());
+			} else if(this.ope === this.div){
+				input(this.div());
 			}
 		},
 
 		reset: function(){
-			$("#ope").val("");
 			$("input").val("");
+			this.calc();
 		}
 	}
+
+	app.init();
 })();
