@@ -2,51 +2,47 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="exos/jquery/calculette/node_modules/semantic-ui/dist/semantic.css">
 	<link rel="stylesheet" href="style.css">
-	<title>jQuery</title>
+	<title>Calculatrice Simplon</title>
 </head>
 <body>
-	<h1>Bienvenue</h1>
-	<form onsubmit="return false">
-		<input id="input1" type="text" placeholder="Nombre 1">
-		<input id="input2" type="text" placeholder="Nombre 2">
-		<select name="ope" id="ope">
-			<option value="add">+</option>
-			<option value="substract">-</option>
-			<option value="multiply">*</option>
-			<option value="divide">/</option>
-		</select>
-		<button id="button1">Calculer</button>
-	</form>
-	<!---<div>
-		Résultat: <span id="result">...</span>
+	<h1>Calculatrice</h1>
+	<div>
 	</div>
-	<div class="calculatrice">
-		<div class="chiffre">
-			<button id="btn1">1</button>
-			<button>2</button>
-			<button>3</button>
-			<button>+</button>
-		</div>
-		<div class="chiffre">
-			<button>4</button>
-			<button>5</button>
-			<button>6</button>
-			<button>-</button>
-		</div>
-		<div class="chiffre">
-			<button>7</button>
-			<button>8</button>
-			<button>9</button>
-			<button>*</button>
-		</div>
-		<div class="chiffre">
-			<button>/</button>
-			<button>=</button>
-		</div>
-	</div>-->
+	<div class="container">
+		<div><input></div>
 
-	<script src="node_modules/jquery/dist/jquery.js"></script>
+		<div class="row">
+			<button class=chiffre value="1">1</button>
+			<button class=chiffre value="2">2</button>
+			<button class=chiffre value="3">3</button>
+			<button id="add" value="+">+</button>
+		</div>
+
+		<div class="row">
+			<button class=chiffre value="4">4</button>
+			<button class=chiffre value="5">5</button>
+			<button class=chiffre value="6">6</button>
+			<button id="sub" value="-">-</button>
+		</div>
+
+		<div class="row">
+			<button id="7" value="7">7</button>
+			<button id="8" value="8">8</button>
+			<button id="9" value="9">9</button>
+			<button id="mult" value="*">*</button>
+		</div>
+
+		<div class="row">
+			<button id="0" value="0">0</button>
+			<button id="div" value="/">/</button>
+			<button id="result" value="=">=</button>
+			<button id="reset">Reset</button>
+		</div>
+	</div>
+
+	<script src="exos/jquery/calculette/node_modules/jquery/dist/jquery.js"></script>
 	<script src="app.js"></script>
 </body>
 </html>
